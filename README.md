@@ -1,7 +1,10 @@
 # k8sworkshop prepare
 
-minikube start
-minikube addons enable ingress
+-install docker, kubectl and minikube
+
+-minikube start
+
+-minikube addons enable ingress
 
 # Basic Docker operation
 
