@@ -1,0 +1,6 @@
+@KubernetesWorkshop.App2_HostAddress = http://localhost:5083
+
+GET {{KubernetesWorkshop.App2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

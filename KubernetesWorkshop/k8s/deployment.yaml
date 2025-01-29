@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenatesworkshop-app1
+  namespace: my-namespace
+  labels:
+    app: kubenatesworkshop-app1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubenatesworkshop-app1
+  template:
+    metadata:
+      name: kubenatesworkshop-app1
+      labels:
+        app: kubenatesworkshop-app1
+    spec:
+      containers:
+        - name: kubenatesworkshop-app1
+          image: ts01soonr/k8s-app1:latest
+          #image: kubenatesworkshop/app1:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: my-configmap
+      restartPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenatesworkshop-app2
+  namespace: my-namespace
+  labels:
+    app: kubenatesworkshop-app2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubenatesworkshop-app2
+  template:
+    metadata:
+      name: kubenatesworkshop-app2
+      labels:
+        app: kubenatesworkshop-app2
+    spec:
+      containers:
+        - name: kubenatesworkshop-app2
+          image: ts01soonr/k8s-app2:latest
+          #image: kubenatesworkshop/app1:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      restartPolicy: Always
+      

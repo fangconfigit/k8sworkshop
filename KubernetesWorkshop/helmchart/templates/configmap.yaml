@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+  namespace: {{ .Values.namespace }}
+data:
+  # kv format
+  APP2URL: "http://kubenatesworkshop-app2.{{ .Values.namespace }}.svc.cluster.local:28080"
