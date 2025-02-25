@@ -27,8 +27,8 @@ wsl -t Ubuntu
 
 # Installl Docker&Docker Compose
 
-- install/install.sh
-**[install.sh](install/install.sh)**
+- Install/install.sh
+**[install.sh](Install/install.sh)**
 
 # Lookup IP address of linux[windows subsystem]
 
