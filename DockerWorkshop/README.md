@@ -9,15 +9,16 @@
 
 -manually setup 
 
-# terminate and restart ubuntu
+# Terminate and restart ubuntu
 
 ```
 wsl -t Ubuntu
 ```
 
-# installl Docker&Docker Compose
+# Installl Docker&Docker Compose
 
 - install/install.sh
+**[install.sh](install/install.sh)**
 
 # Lookup IP address of linux[windows subsystem]
 
@@ -31,7 +32,7 @@ docker login ghcr.io --username=[your-loginname] --password=[token]
 ```
 
 
-# install Ace
+# Install Ace
 
 ```
 bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaab0-2")
@@ -46,4 +47,6 @@ bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaa
 172.21.231.141  35p.duckdns.org
 172.21.231.141  35m.duckdns.org
 ```
-open browser -> https://35p.duckdns.org
+# open browser
+
+-> https://35p.duckdns.org

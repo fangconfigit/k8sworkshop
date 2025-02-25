@@ -2,7 +2,7 @@
 
 -Enable wsl [install Linux on Windows with WSL]
 
--Setup Ubuntu on Windows 
+-Setup Ubuntu on Windows [Example: Ubuntu 20.04.4 LTS]
 
 
 # Setup Ubuntu 
@@ -21,7 +21,13 @@ systemd=true
 
 # terminate and restart ubuntu
 
-# installl Docker&Docker Compose
+- reboot ubuntu and check system service
+```
+sudo systemctl list-unit-files --type=service
+```
+
+
+# install Docker&Docker Compose
 
 ```
 #!/bin/bash
@@ -38,6 +44,11 @@ newgrp docker
 sudo systemctl status docker
 
 ```
+
+#  How to Install Docker on Ubuntu 24.04: Step-by-Step Guide 
+
+- https://www.cherryservers.com/blog/install-docker-ubuntu
+
 
 
 
