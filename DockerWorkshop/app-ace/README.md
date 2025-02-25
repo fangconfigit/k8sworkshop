@@ -1,4 +1,4 @@
-# Running Ace via docker-compose
+# Running light-weigh of Ace via Docker Compose
 
 ## Traefik reverse proxy
 

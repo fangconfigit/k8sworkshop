@@ -25,7 +25,7 @@ systemd=true
 wsl -t Ubuntu
 ```
 
-# Installl Docker&Docker Compose
+# Install Docker&Docker Compose
 
 - Install/install.sh
 **[install.sh](Install/install.sh)**
@@ -34,6 +34,7 @@ wsl -t Ubuntu
 
 ```
 ip add
+ip -4 -o addr show eth0 | awk '{print $4}'
 ```
 # Prepare docker login 
 
@@ -51,8 +52,8 @@ bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaa
 
 # Edit Windows local host file
 
--edit local dns for windows: [C:\Windows\System32\drivers\etc\hosts]
--example
+- edit local dns for windows: [C:\Windows\System32\drivers\etc\hosts]
+- example:
 ```
 172.21.231.141  35p.duckdns.org
 172.21.231.141  35m.duckdns.org
