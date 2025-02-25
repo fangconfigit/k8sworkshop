@@ -1,4 +1,4 @@
-# DockeWorkshop repare
+# DockeWorkshop prepare
 
 -Enable wsl [install Linux on Windows with WSL]
 
@@ -7,7 +7,17 @@
 
 # Setup Ubuntu 
 
--manually setup 
+-enable systemd
+
+```
+sudo nano /etc/wsl.conf
+
+```
+
+```
+[boot] 
+systemd=true
+```
 
 # Terminate and restart ubuntu
 
@@ -50,3 +60,18 @@ bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaa
 # open browser
 
 -> https://35p.duckdns.org
+
+# Stop and Start ace
+
+```
+~/test/app-ace/stop-ace.sh
+```
+
+```
+~/test/app-ace/start-ace.sh
+```
+
+
+# Result
+
+![App Screenshot](install/image.png)
