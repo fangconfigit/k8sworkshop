@@ -74,4 +74,4 @@ bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaa
 
 # Result
 
-![App Screenshot](install/image.png)
+![App Screenshot](Install/image.png)
