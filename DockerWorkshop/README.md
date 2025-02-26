@@ -1,4 +1,4 @@
-# DockeWorkshop prepare
+# DockerWorkshop prepare
 
 -Enable wsl [install Linux on Windows with WSL]
 
@@ -11,8 +11,9 @@
 
 ```
 sudo nano /etc/wsl.conf
-
 ```
+
+-/etc/wsl.conf
 
 ```
 [boot] 
@@ -53,7 +54,7 @@ bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaa
 # Edit Windows local host file
 
 - edit local dns for windows: [C:\Windows\System32\drivers\etc\hosts]
-- example:
+- As an example:
 ```
 172.21.231.141  35p.duckdns.org
 172.21.231.141  35m.duckdns.org
