@@ -1,0 +1,58 @@
+# This Docker Compose file enables you to start Ace Platform without installing it.
+# Ace Platform will run in a Linux container, so if you are on Windows you need to make sure
+# that Docker is set up to use Linux containers.
+#
+# -- Starting Ace Platform  --
+#
+# Follow these steps to start using Ace Platform:
+#
+# 1. Install Docker from https://www.docker.com/ if you haven't already.
+# 2. Using the command line, navigate to the root of the Ace Platform distribution folder (where this file is located).
+# 3. Run the command 'docker-compose up'.
+# 4. In your browser, navigate to http://localhost:9000.
+# 5. Install your license.
+version: "3"
+services:
+  ace-platform:
+    #build: bin
+    image: ghcr.io/configit/ace-platform:7.1.0-nightly
+    ports:
+      - 9001:9001
+    environment:
+      # Configures the endpoint that Ace Platform listens on. The endpoint port
+      # must be the same as the container port.
+      ACEPLATFORM_KESTREL__ENDPOINTS__HTTP__URL: "http://+:9001"
+      # Configures Ace Platform to authenticate all connections from any IP.
+      # Warning: If you have opened the port to the outside, Ace Platform will be open to anyone.
+      #ACEPLATFORM_AUTHENTICATION__IPADDRESS__ALLOW: "All"
+      # Configures Ace Platform to authenticate users managed in Ace.
+      # A default user (email 'admin' / password 'admin') is bootstrapped in fresh databases.
+      # The Authority URL must be the public URL at which Ace Platform is accessed at.
+      ACEPLATFORM_AUTHENTICATION__LOCAL__ENABLED: "true"
+      ACEPLATFORM_AUTHENTICATION__LOCAL__AUTHORITY: "http://localhost:9001"
+      # Specifies the path to the log file.
+      ACEPLATFORM_LOGGING__FILE__PATH: "/ace-platform/data/logs/ace-platform-{Date}.txt"
+      # Enables console logging.
+      ACEPLATFORM_LOGGING__CONSOLE__ENABLED: "true"
+      # Sets the storage connection string for Ace Platform.
+      ACEPLATFORM_STORAGE__CONNECTIONSTRING: "StorageType=Directory;RootPath=/ace-platform/data/packages"
+      # Sets the SQLite database connection string for Ace Platform.
+      ACEPLATFORM_DATABASE__DIALECT: "Sqlite"
+      ACEPLATFORM_DATABASE__CONNECTIONSTRING: "Data Source=/ace-platform/data/db/ace-platform.db"
+      
+      # deactivate task hub and associated services
+      ACEPLATFORM_TASKHUB__ENABLED: "false"
+      ACEPLATFORM_COMPILE__ENABLED: "false"
+      ACEPLATFORM_PACKAGEOPERATIONS__ENABLED: "false"
+      ACEPLATFORM_BENCHMARK__ENABLED: "false"
+      ACEPLATFORM_Cors__AllowedOrigins: "*"
+      # deactivate Model integration
+      ACEPLATFORM_MODULES__MODEL__ENABLED: "false"
+      
+      # deactivate notifications
+      ACEPLATFORM_NOTIFICATIONS__USERS__0__ENABLED: "false"
+      ACEPLATFORM_NOTIFICATIONS__Packages__0__ENABLED: "false"
+      ACEPLATFORM_NOTIFICATIONS__ROLES__0__ENABLED: "false"
+      ACEPLATFORM_NOTIFICATIONS__CONFIGURATIONS__0__ENABLED: "false"
+    volumes:
+      - ./ace-platform-data:/ace-platform/data:rw
