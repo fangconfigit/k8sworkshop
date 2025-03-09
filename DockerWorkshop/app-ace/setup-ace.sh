@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# support ace-7.2
 # create a zip from the current folder
 # sudo zip -r ../full-ace.zip .
 # Step 0: create netowrk
@@ -11,7 +11,7 @@ mkdir -p ~/test
 if [ -f "full-ace.zip" ]; then
 	cp -f full-ace.zip ~/test
 else
-	curl -o ~/test/full-ace.zip -L https://us.workplace.datto.com/filelink/6813-7dd64730-b8011cca13-2
+	curl -o ~/test/full-ace.zip -L https://us.workplace.datto.com/filelink/6813-7e0b87
 fi
 # Step 3,4: Create a directory ~/test/app-ace
 sudo rm -r ~/test/app-ace
@@ -28,7 +28,13 @@ sudo chmod -R 777 ~/test/app-ace
 chmod 600 ~/test/app-ace/acme.json
 chmod +x ~/test/app-ace/*.sh
 
-IP_FULL=$(ip -4 -o addr show eth0 | awk '{print $4}')
+# support both eth0 and eno1 network interface
+IP_X=$(ip -4 -o addr show eth0 | awk '{print $4}')
+if expr "$IP_X" : ".*\/" > /dev/null; then
+	IP_FULL=${IP_X}
+else
+	IP_FULL=$(ip -4 -o addr show eno1 | awk '{print $4}')
+fi
 if expr "$IP_FULL" : ".*\/" > /dev/null; then
 	IP=${IP_FULL%%/*}
 	./start-ace.sh ${IP} -d

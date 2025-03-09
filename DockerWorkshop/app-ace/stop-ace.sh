@@ -6,8 +6,7 @@
 ######################################
 
 DC="docker-compose"
-if command -v ${DC} &> /dev/null
-then
+if command -v ${DC} &> /dev/null; then
     echo ${DC}
 else
     DC="docker compose"
