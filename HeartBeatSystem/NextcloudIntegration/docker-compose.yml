@@ -67,6 +67,20 @@ services:
     networks:
       - internal
 
+  hbagent:
+    image: ts01soonr/ace
+    container_name: hearbeat-ace
+    restart: unless-stopped
+    ports:
+      - 8088:8888
+    environment:
+      HBAPI: http://hbserver/
+      HBKEY: MyFirstAce
+    depends_on:
+      - hbserver
+    networks:
+      - internal
+
 networks:
   internal:
     driver: bridge

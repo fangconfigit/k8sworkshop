@@ -1,9 +1,10 @@
 # Integrated with NextCloud
 Deploy Hearbeat Control system together with NextCloud
- - mariadb:10.11
- - nextcloud:latest - port 8080
- - phpmyadmin - port 8081
- - ts01soonr/cfg - port 8082
+ - mariadb:10.11    - mysql db
+ - nextcloud    - Nextcloud Hub10,  port 8080
+ - phpmyadmin   - DB admin, port 8081
+ - ts01soonr/cfg    -HearBeat Server port 8082
+ - ts01soonr/ace    -HearBeat Client,port 8088
 
 # Docker volumes mapping 
 

@@ -10,7 +10,7 @@ if (isset($_SESSION['username2'])) header("Location:list.php");
 ?>
 <html lang = "en">
 <head>
-<title>Demo System Login</title> 
+<title>Configit Ace</title> 
 <style>         
 	body {
 		padding-top: 20px;

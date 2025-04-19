@@ -147,7 +147,7 @@ if (isset($_SESSION['username2'])){
 	?>
 	</table>
 	<br/>
-	<a href="#">QR-Code</a> - Local time: <?php echo date('Y/m/d H:i:s', time());?> -<a href="logout.php">logout</a>
+	<a href="#">QR-Code</a> - Local time: <?php echo date('Y/m/d H:i:s', time()+3600);?> -<a href="logout.php">logout</a>
 	</center>
 	</body>
 	</html>
