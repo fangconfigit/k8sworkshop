@@ -205,7 +205,7 @@ if (isset($_SESSION['username2'])){
 	  <option value="1">run</option>
 	  <option value="0">done</option>
 	</select>
-	<input type="submit" value="Filter"> - <a href="https://lab6-us.workplace.datto.com/filelink/15c72-159e5f2-118ef14113-2" target="_blank"> Log </a> <br>
+	<input type="submit" value="Filter"> <br>
 	</div><br>
 	</form>
 	<table border="0" cellspacing="2" cellpadding="2" style="font-size:100%;">

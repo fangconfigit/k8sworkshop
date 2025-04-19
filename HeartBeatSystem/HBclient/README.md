@@ -5,8 +5,8 @@
 
 # Docker Build/Push command
 
--docker build -t ts01soonr/ace .
--docker push ts01soonr/ace
+ - docker build -t ts01soonr/ace .
+ - docker push ts01soonr/ace
 
 # Runng docker
 
@@ -19,6 +19,7 @@ docker run --rm -p 8888:8888 ts01soonr/ace
 docker run --rm -e CMD="wait 3" ts01soonr/ace
 ```
 # running via Docker-Compose
+
 
 ```
   hbagent:
