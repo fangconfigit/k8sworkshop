@@ -67,8 +67,7 @@ if (isset($_SESSION['username2'])) header("Location:list.php");
 			if (isset($_POST['login']) && !empty($_POST['username'])&& !empty($_POST['password'])) {
 				if (strcasecmp($_POST['username'], getenv('HB_USER')) == 0 && strcasecmp($_POST['password'], getenv('HB_PWD')) == 0) {
 					$_SESSION['valid'] = true;
-					$_SESSION['password2'] = 'gylle';
-					$_SESSION['username2'] = 'soonr';
+					$_SESSION['username2'] = getenv('HB_USER');
 					header("Location:list.php");
 				}else {
 					$msg = 'Wrong username or password';
