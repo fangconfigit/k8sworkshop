@@ -20,13 +20,13 @@ jobs:
         uses: docker/setup-buildx-action@v3
       
       - name: Prepare Client
-        working-directory: HeartBeatSystem/HBclient
         run: |
-          curl -o src/${{ vars.JAR_NAME }} -L ${{ vars.DWP_HBAGENT }}
+          curl -o ./HeartBeatSystem/HBclient/src/${{ vars.JAR_NAME }} -L ${{ vars.DWP_HBAGENT }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          file: Dockerfile
+          context: ./HeartBeatSystem/HBclient
+          file: ./HeartBeatSystem/HBclient/Dockerfile
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/ace:latest      
