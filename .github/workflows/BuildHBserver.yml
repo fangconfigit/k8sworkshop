@@ -1,0 +1,28 @@
+name: Build HBserver image
+on:
+  # Trigger the action manually from the UI
+  workflow_dispatch:
+jobs:
+  BuildHBserver:
+    name: Build a new Hearbeat server image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}      
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./HeartBeatSystem/HBserver
+          file: ./HeartBeatSystem/HBserver/Dockerfile
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/cfg:latest      
