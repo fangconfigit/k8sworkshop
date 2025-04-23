@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  v18-linux-dotnet9:
+    image: ts01soonr/v18-linux
+    ports:
+      - "11111:11111"
+      - "18888:8888"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./app:/app
+    restart: unless-stopped
