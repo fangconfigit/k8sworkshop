@@ -1,10 +1,10 @@
-name: Build HBserver image
+name: Build Heartbear agent image
 on:
   # Trigger the action manually from the UI
   workflow_dispatch:
 jobs:
   BuildHBserver:
-    name: Build a new Hearbeat server image
+    name: Build a new Hearbeat agent image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,15 +14,19 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}     
       
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       
+      - name: Prepare Client
+        working-directory: HeartBeatSystem/HBclient
+        run: |
+          curl -o src/${{ vars.JAR_NAME }} -L ${{ vars.DWP_HBAGENT }}
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./HeartBeatSystem/HBserver
-          file: ./HeartBeatSystem/HBserver/Dockerfile
+          file: Dockerfile
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/cfg:latest      
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/ace:latest      
