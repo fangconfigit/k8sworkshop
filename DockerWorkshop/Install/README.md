@@ -27,7 +27,8 @@ sudo systemctl list-unit-files --type=service
 ```
 
 
-# install Docker&Docker Compose
+# Install Docker and Docker Compose
+How you install Docker and Docker Compose can vary depending on the Linux distribution you use. You can find detailed instructions in both the Docker and Docker Compose installation documentation. The following example is for Ubuntu
 
 ```
 #!/bin/bash
@@ -45,12 +46,16 @@ sudo systemctl status docker
 
 ```
 
+Verify that Docker and Docker Compose are available by typing:
+```
+docker --version
+docker compose version
+```
 
-
-#  How to Install Docker on Ubuntu 24.04: Step-by-Step Guide 
+#  Ref. Step-by-Step Guides 
 
 - https://www.cherryservers.com/blog/install-docker-ubuntu
-
+- https://docs.n8n.io/hosting/installation/server-setups/docker-compose/
 
 
 
