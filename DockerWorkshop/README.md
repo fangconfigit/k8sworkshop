@@ -53,19 +53,20 @@ docker login ghcr.io --username=[your-loginname] --password=[token]
 ```
 
 # Options 
-## Install Ace[7.1.0] - mssql: ubuntu-latest
-    
-    ```
-    bash <(curl -sSL "https://raw.githubusercontent.com/fangconfigit/k8sworkshop/refs/heads/install/DockerWorkshop/app-ace/7.1/setup-ace.sh")
+## Install Ace[7.1.0] - 
 
-    ```
+mssql: ubuntu-latest    
+```
+bash <(curl -sSL "https://raw.githubusercontent.com/fangconfigit/k8sworkshop/refs/heads/install/DockerWorkshop/app-ace/7.1/setup-ace.sh")
 
-## Install Ace[0.0.0] - mssql: 2022-latest
+```
 
-    ```
-    bash <(curl -sSL "https://raw.githubusercontent.com/fangconfigit/k8sworkshop/refs/heads/install/DockerWorkshop/app-ace/7.2/setup-ace.sh")
+## Install Ace[0.0.0]
 
-    ```
+mssql: 2022-latest
+```
+bash <(curl -sSL "https://raw.githubusercontent.com/fangconfigit/k8sworkshop/refs/heads/install/DockerWorkshop/app-ace/7.2/setup-ace.sh")
+```
 
 # Edit Windows local host file
 
