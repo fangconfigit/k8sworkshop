@@ -57,7 +57,7 @@ docker login ghcr.io --username=[your-loginname] --password=[token]
 
     mssql: ubuntu-latest
     ```
-    bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7ddfdd1e-89cefaaab0-2")
+    bash <(curl -sSL "https://raw.githubusercontent.com/fangconfigit/k8sworkshop/refs/heads/install/DockerWorkshop/app-ace/7.1/setup-ace.sh")
 
     ```
 
@@ -66,7 +66,7 @@ docker login ghcr.io --username=[your-loginname] --password=[token]
     mssql: 2022-latest
 
     ```
-    bash <(curl -sSL "https://us.workplace.datto.com/filelink/6813-7e0b87f4-41607f59a7-2")
+    bash <(curl -sSL "https://raw.githubusercontent.com/fangconfigit/k8sworkshop/refs/heads/install/DockerWorkshop/app-ace/7.2/setup-ace.sh")
 
     ```
 
