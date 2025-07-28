@@ -1,10 +1,10 @@
-name: Build V18-Linux
+name: Build V19-Linux
 on:
   # Trigger the action manually from the UI
   workflow_dispatch:
 jobs:
   BuildHBserver:
-    name: Build a new V18-Linux-dotnet9 image
+    name: Build a new Linux-dotnet9 image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,4 +26,4 @@ jobs:
           context: ./DockerWorkshop/v18-linux
           file: ./DockerWorkshop/v18-linux/Dockerfile
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/v18-linux:latest      
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/v19-linux:latest      
