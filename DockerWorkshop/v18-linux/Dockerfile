@@ -1,6 +1,6 @@
     # ---- Stage 1: Build Environment ----
-    FROM configit/v18-linux-net-9.0.102 AS builder
-    
+    #FROM configit/v18-linux-net-9.0.102 AS builder
+    FROM configit/v19-linux-net-9.0.102 AS builder
     
     # Set working directory
     WORKDIR /app
